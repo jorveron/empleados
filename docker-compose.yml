@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:13
+    restart: always
+    environment:
+      - POSTGRES_DB=personas
+      - POSTGRES_USER=test
+      - POSTGRES_PASSWORD=test123
+    ports:
+      - 5440:5432
+    volumes:
+      - ./postgres_data:/var/lib/postgresql/data
