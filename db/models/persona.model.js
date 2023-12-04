@@ -1,5 +1,6 @@
 const { Model, DataTypes, Sequelize } = require('sequelize');
 
+
 const PERSONA_TABLE = 'personas';
 
 const PersonaSchema = {
@@ -10,7 +11,7 @@ const PersonaSchema = {
     allowNull: false,
   },
   nombre: {
-    type: DataTypes.STRING,
+    type: DataTypes.STRING(100),
     allowNull: false,
     validate: {
       len: [4, 100], // Longitud permitida entre 4 y 100 caracteres

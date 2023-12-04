@@ -7,6 +7,11 @@ module.exports = {
     dialect: 'postgres',
     logging: (msg, time, level) => {
       console.log(`${level} ${msg} (${time} ms)`)
+    },
+    dialectOptions: {
+      ssl: {
+        rejectUnauthorized: false
+      }
     }
   },
   production: {

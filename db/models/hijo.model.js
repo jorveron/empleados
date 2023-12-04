@@ -1,5 +1,5 @@
 const { Model, DataTypes, Sequelize } = require('sequelize');
-const { PERSONA_TABLE } = require('./persona.model')
+const { PERSONA_TABLE } = require('./../models/persona.model')
 
 const HIJO_TABLE = 'persona_hijos'
 
@@ -11,7 +11,7 @@ const HijoSchema = {
     allowNull: false,
   },
   hijo: {
-    type: DataTypes.STRING,
+    type: DataTypes.STRING(100),
     allowNull: false,
     validate: {
       len: [4, 100], // Longitud permitida entre 4 y 100 caracteres
@@ -27,7 +27,7 @@ const HijoSchema = {
     allowNull: true,
     reference: {
       model: PERSONA_TABLE,
-      key: 'id'
+      key: 'id',
     },
     onUpdate: 'CASCADE',
     onDelete: 'SET NULL'
