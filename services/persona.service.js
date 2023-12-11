@@ -14,7 +14,9 @@ class PersonaService {
   }
 
   async find() {
-    const respuesta = await models.Persona.findAll();
+    const respuesta = await models.Persona.findAll({
+      order: [['id', 'ASC']],
+    });
     return respuesta;
   }
 

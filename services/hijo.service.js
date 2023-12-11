@@ -12,7 +12,8 @@ class HijoService {
 
   async find() {
     const respuesta = await models.Hijo.findAll({
-      include: ['persona']
+      include: ['persona'],
+      order: [['id', 'ASC']],
     });
     return respuesta;
   }
